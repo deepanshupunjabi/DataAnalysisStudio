@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Analysis Studio</title><link rel="stylesheet" href="/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>
+<body><div class="shell">
+<aside><div class="brand"><span class="logo">✦</span><div><b>DataStudio</b><small>ANALYTICS WORKSPACE</small></div></div>
+<nav><button class="nav active" data-tab="overview">▦ Overview</button><button class="nav" data-tab="clean">✧ Data Cleaning</button><button class="nav" data-tab="explore">◷ Explore & EDA</button><button class="nav" data-tab="insights">✦ AI Insights</button></nav>
+<div class="side-note"> <span class="dot"></span> Local analysis workspace</div></aside>
+<main><header><div><div class="eyebrow">DATA WORKSPACE / PROJECT</div><h1>Data Analysis Studio</h1><p>Upload, understand, clean and explore your data.</p></div><div class="header-actions"><button id="upload-new" class="secondary">＋ Upload / Change dataset</button><button id="export" class="secondary" disabled>↓ Export CSV</button></div></header>
+<section id="upload-panel" class="upload-card"><div class="upload-icon">↑</div><h2>Start with your dataset</h2><p>Upload a CSV, Excel or JSON file to begin your analysis.</p><label class="primary upload-btn">Choose file<input type="file" id="file" accept=".csv,.xlsx,.xls,.json"></label><small id="upload-status">Your file is processed locally by this app's Python backend.</small></section>
+<div id="workspace" hidden>
+<section id="overview" class="tab-panel"><div class="section-head"><div><h2>Dataset overview</h2><p>A quick health check of your uploaded data.</p></div><span id="filename" class="filetag"></span></div>
+<div id="kpis" class="kpis"></div><div class="panel"><h3>Column profile</h3><div class="table-wrap"><table id="profile-table"></table></div></div>
+<div class="panel"><h3>Data preview <span class="muted">· first 20 rows</span></h3><div class="table-wrap"><table id="preview-table"></table></div></div></section>
+<section id="clean" class="tab-panel" hidden><div class="section-head"><div><h2>Data cleaning</h2><p>Review detected issues. Select only the changes you approve.</p></div><button id="scan" class="secondary">↻ Scan dataset</button></div><div id="suggestions" class="panel"><p class="muted">Run a scan to find possible data quality issues.</p></div><button id="apply" class="primary" disabled>Apply selected changes</button><p id="clean-status" class="muted"></p></section>
+<section id="explore" class="tab-panel" hidden><div class="section-head"><div><h2>Explore & EDA</h2><p>Understand numeric distributions and category patterns.</p></div><button id="analyze" class="secondary">Generate analysis</button></div><div id="charts" class="chart-grid"><div class="panel muted">Generate analysis to display charts.</div></div></section>
+<section id="insights" class="tab-panel" hidden><div class="section-head"><div><h2>Insights & recommendations</h2><p>Automated observations based on your dataset.</p></div><button id="get-insights" class="secondary">Generate insights</button></div><div id="insight-list" class="panel muted">Insights will appear here.</div><p class="muted">These are rule-based observations, not a substitute for domain knowledge. Connect an AI provider later for natural-language reasoning.</p></section>
+</div></main></div><script src="/app.js"></script></body></html>
